@@ -1,12 +1,11 @@
 "use client"
 
-import { ReloadIcon } from "@radix-ui/react-icons"
-import { signOut } from "next-auth/react"
-import { useState } from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import type { UserWithLink } from "@/lib/utils"
-import { UserProfileDialog } from "./user-profile-dialog"
+import { ReloadIcon } from "@radix-ui/react-icons"
+import { signOut } from "next-auth/react"
+import { useState } from "react"
 import {
   Drawer,
   DrawerContent,
@@ -16,6 +15,7 @@ import {
 } from "../ui/drawer"
 import { Icons, iconVariants } from "../ui/icons"
 import { Separator } from "../ui/separator"
+import { UserProfileDialog } from "./user-profile-dialog"
 
 type UserProfileDrawerProps = {
   user: UserWithLink
@@ -126,9 +126,10 @@ export const UserProfileDrawer = ({ user }: UserProfileDrawerProps) => {
             </DrawerHeader>
             <div className="mb-12 flex flex-col items-start gap-2">
               <Button
-                disabled
                 variant="link"
-                onClick={() => setIsUserProfileDialogOpen(true)}
+                onClick={() =>
+                  window.open("https://github.com/gaievskyi/urlie")
+                }
               >
                 <Icons.Code2 className={iconVariants({ className: "me-2" })} />
                 Source

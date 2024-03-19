@@ -1,8 +1,5 @@
 "use client"
 
-import { ReloadIcon } from "@radix-ui/react-icons"
-import { signOut } from "next-auth/react"
-import { useState } from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,6 +12,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Icons, iconVariants } from "@/components/ui/icons"
 import type { UserWithLink } from "@/lib/utils"
+import { ReloadIcon } from "@radix-ui/react-icons"
+import { signOut } from "next-auth/react"
+import { useState } from "react"
 import { UserProfileDialog } from "./user-profile-dialog"
 
 type UserProfileDropdownProps = {
@@ -74,7 +74,9 @@ export const UserProfileDropdown = ({ user }: UserProfileDropdownProps) => {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuGroup></DropdownMenuGroup>
-            <DropdownMenuItem disabled>
+            <DropdownMenuItem
+              onClick={() => window.open("https://github.com/gaievskyi/urlie")}
+            >
               <Icons.Code2 className={iconVariants({ className: "me-2" })} />
               Source
             </DropdownMenuItem>
