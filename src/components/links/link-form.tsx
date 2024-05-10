@@ -1,13 +1,5 @@
 "use client"
 
-import { valibotResolver } from "@hookform/resolvers/valibot"
-import { ReloadIcon } from "@radix-ui/react-icons"
-import { useSession } from "next-auth/react"
-import { useAction } from "next-safe-action/hooks"
-import { useForm } from "react-hook-form"
-import { toast } from "sonner"
-import type { Output as Infer } from "valibot"
-import { object, string, url } from "valibot"
 import { createShortLink } from "@/api/actions/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,7 +11,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { setFormErrors } from "@/lib/utils"
-import { CustomLinkButton } from "./custom-link-button"
+import { valibotResolver } from "@hookform/resolvers/valibot"
+import { ReloadIcon } from "@radix-ui/react-icons"
+import { useSession } from "next-auth/react"
+import { useAction } from "next-safe-action/hooks"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import type { Output as Infer } from "valibot"
+import { object, string, url } from "valibot"
 import { CustomLinkDialog } from "./custom-link-dialog"
 
 const formSchema = object({
@@ -89,7 +88,7 @@ export const LinkForm = () => {
             Shorten
           </Button>
         </form>
-        {isAuth ? <CustomLinkDialog /> : <CustomLinkButton disabled />}
+        {isAuth ? <CustomLinkDialog /> : null}
       </div>
     </Form>
   )

@@ -3,7 +3,7 @@ import { ExternalLinkIcon } from "lucide-react"
 export const CreatorLink = ({ text }: { text: string }) => {
   return (
     <a
-      href="https://twitter.com/dgaievskyi"
+      href="https://gaievskyi.com/"
       target="__blank"
       className="group relative inline-block cursor-pointer rounded-xl bg-slate-900 p-px text-xs font-semibold leading-6 text-white no-underline shadow-2xl shadow-zinc-900"
     >
