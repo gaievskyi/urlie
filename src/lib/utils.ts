@@ -1,7 +1,6 @@
-import { type ClassValue, clsx } from "clsx"
 import { customAlphabet } from "nanoid"
 import type { UseFormReturn } from "react-hook-form"
-import { twMerge } from "tailwind-merge"
+export { twMerge as cn } from "tailwind-merge"
 
 export const isDevelopment = process.env.NODE_ENV === "development"
 export const isProduction = process.env.NODE_ENV === "production"
@@ -14,10 +13,6 @@ export function getBaseUrl() {
 }
 
 export const slugRegex = /^[a-zA-Z0-9-_]*$/
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
 
 export function nanoid(size = 4) {
   return customAlphabet(

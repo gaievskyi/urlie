@@ -1,13 +1,13 @@
-import type { Metadata, Viewport } from "next"
-import type { ReactNode } from "react"
 import { AuthProvider } from "@/components/auth-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { configuration } from "@/config/site"
-import { sans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
+import type { Metadata, Viewport } from "next"
+import type { ReactNode } from "react"
 import "./globals.css"
+
+import { GeistSans } from "geist/font/sans"
 
 export const metadata: Metadata = {
   title: {
@@ -73,8 +73,8 @@ export default async function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(sans.className, "antialiased overflow-x-clip")}>
+    <html lang="en" className={GeistSans.className}>
+      <body>
         <AuthProvider>
           <ThemeProvider
             attribute="class"
