@@ -51,7 +51,7 @@ export const UserProfileDrawer = ({ user }: UserProfileDrawerProps) => {
           </Button>
         </DrawerTrigger>
         <DrawerContent>
-          <div className="mx-auto w-full max-w-lg">
+          <div className="mx-auto w-full max-w-lg container">
             <DrawerHeader>
               <DrawerNestedRoot>
                 <DrawerTrigger asChild>

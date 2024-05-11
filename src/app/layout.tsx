@@ -74,7 +74,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body>
+      <body className="overflow-x-clip">
         <AuthProvider>
           <ThemeProvider
             attribute="class"

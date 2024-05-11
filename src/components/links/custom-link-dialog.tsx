@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import type { ShortLink } from "@/api/db/schema"
 import { CustomLinkButton } from "@/components/links/custom-link-button"
 import { CustomLinkForm } from "@/components/links/custom-link-form"
@@ -15,6 +14,7 @@ import {
   ResponsiveDialogTitle,
   ResponsiveDialogTrigger,
 } from "@/components/ui/responsive-dialog"
+import { useState } from "react"
 
 type CustomLinkDialogProps = (
   | {
@@ -62,7 +62,7 @@ export const CustomLinkDialog = ({
           <CustomLinkButton />
         </ResponsiveDialogTrigger>
       )}
-      <ResponsiveDialogContent>
+      <ResponsiveDialogContent className="container">
         <ResponsiveDialogHeader>
           <ResponsiveDialogTitle>
             {isEditing ? "Edit shortened link" : "Customize"}
